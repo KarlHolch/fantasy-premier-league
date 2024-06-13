@@ -1,0 +1,24 @@
+<!-- Assuming your component has 'documentModel' available in the component class -->
+<div class="league-table-container">
+    <h2>{{ league?.league?.name }}</h2>
+    <table class="league-table">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Team Name</th>
+          <th>Rank</th>
+          <th>Total points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of league?.standings?.results!! | sortByRank">
+          <td>{{ player.player_name }}</td>
+          <td>{{ player.entry_name }}</td>
+          <td>{{ player.rank }}<span *ngIf="player.rank!! < player.last_rank!!" class="rank-up">↑</span>
+            <span *ngIf="player.rank!! > player.last_rank!!" class="rank-down">↓</span></td>
+          <td>{{ player.total}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
