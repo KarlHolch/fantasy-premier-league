@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FantasyplayerComponent } from './components/fantasyplayer/fantasyplayer.component';
 import { RulesComponent } from './components/app-rules/app-rules.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'fantasy', pathMatch: 'full' },
-  { path: 'fantasy', component: FantasyplayerComponent },
+  { path: '', redirectTo: 'overview', pathMatch: 'full' },
+  { path: 'overview', component: OverviewComponent },
   { path: 'rules', component: RulesComponent },
 ];
 

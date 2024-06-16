@@ -1,0 +1,26 @@
+<!-- user-list.component.html -->
+<table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Player Name</th>
+        <th>Team Name</th>
+        <th>Total Points</th>
+        <th>Rank Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | orderBy: 'rank'">
+        <td>{{ user.rank }}</td>
+        <td>{{ user.playerName }}</td>
+        <td>{{ user.entryName }}</td>
+        <td>{{ user.totalPoints }}</td>
+        <td>
+          <span *ngIf="user.rank < user.lastRank" class="arrow-up">↑</span>
+          <span *ngIf="user.rank > user.lastRank" class="arrow-down">↓</span>
+          <span *ngIf="user.rank === user.lastRank">→</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

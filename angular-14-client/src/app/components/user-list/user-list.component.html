@@ -1,0 +1,42 @@
+<!-- user-list.component.html -->
+<mat-card>
+    <mat-table [dataSource]="dataSource" matSort>
+      <!-- Rank Column -->
+      <ng-container matColumnDef="rank">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.rank}} </mat-cell>
+      </ng-container>
+  
+      <!-- Player Name Column -->
+      <ng-container matColumnDef="playerName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Player Name </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.playerName}} </mat-cell>
+      </ng-container>
+  
+      <!-- Team Name Column -->
+      <ng-container matColumnDef="entryName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Team Name </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.entryName}} </mat-cell>
+      </ng-container>
+  
+      <!-- Total Points Column -->
+      <ng-container matColumnDef="totalPoints">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Total Points </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.totalPoints}} </mat-cell>
+      </ng-container>
+  
+      <!-- Rank Change Column -->
+      <ng-container matColumnDef="rankChange">
+        <mat-header-cell *matHeaderCellDef> Rank Change </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <mat-icon *ngIf="user.rank < user.lastRank" class="arrow-up">arrow_upward</mat-icon>
+          <mat-icon *ngIf="user.rank > user.lastRank" class="arrow-down">arrow_downward</mat-icon>
+          <mat-icon *ngIf="user.rank === user.lastRank">horizontal_rule</mat-icon>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+  
