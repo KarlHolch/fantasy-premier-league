@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8089",
+  //origin: "http://localhost:8089",
   origin: "http://localhost:4200"
 };
 
@@ -16,7 +16,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("./models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -35,8 +35,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/fantasy.routes")(app);
-require("./app/routes/database-synchronizer.routes")(app);
+require("./routes/fantasy.routes")(app);
+require("./routes/database-synchronizer.routes")(app);
 
 // set port, listen for requests
 const PORT = 8189;

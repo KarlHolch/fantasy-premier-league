@@ -11,7 +11,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['rank', 'playerName', 'entryName', 'totalPoints', 'rankChange'];
-  dataSource: MatTableDataSource<User> = new MatTableDataSource<User>([]);
+  dataSource = new MatTableDataSource<User>([]);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort | null = null;
 
