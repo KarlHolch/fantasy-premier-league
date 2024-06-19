@@ -20,6 +20,12 @@
     </ng-container>
 
     <!-- Total Points Column -->
+    <ng-container matColumnDef="currentGameweek">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell-custom"> Current gameweek</mat-header-cell>
+      <mat-cell *matCellDef="let user" class="mat-cell-custom"> {{ getGameweekStat(user, currentGameweekNumber!)}} </mat-cell>
+    </ng-container>
+
+    <!-- Total Points Column -->
     <ng-container matColumnDef="totalPoints">
       <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell-custom"> Total Points </mat-header-cell>
       <mat-cell *matCellDef="let user" class="mat-cell-custom"> {{user.totalPoints}} </mat-cell>
@@ -29,9 +35,9 @@
     <ng-container matColumnDef="rankChange">
       <mat-header-cell *matHeaderCellDef class="mat-header-cell-custom"> Rank Change </mat-header-cell>
       <mat-cell *matCellDef="let user" class="mat-cell-custom">
-        <mat-icon *ngIf="user.rank < user.lastRank" class="arrow-up">arrow_upward</mat-icon>
-        <mat-icon *ngIf="user.rank > user.lastRank" class="arrow-down">arrow_downward</mat-icon>
-        <mat-icon *ngIf="user.rank === user.lastRank" class="horizontal-rule">horizontal_rule</mat-icon>
+        <mat-icon *ngIf="user.rank < user.lastRank" class="arrow-up">&#x2191;</mat-icon>
+        <mat-icon *ngIf="user.rank > user.lastRank" class="arrow-down">&#x2193;</mat-icon>
+        <mat-icon *ngIf="user.rank === user.lastRank" class="horizontal-rule">—</mat-icon>
       </mat-cell>
     </ng-container>
 

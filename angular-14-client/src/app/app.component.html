@@ -1,17 +1,26 @@
 <div>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Systematic Fantasy League</a>
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a routerLink="user-list" class="nav-link">Table</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="rules" class="nav-link">Rules</a>
-      </li>
-    </div>
-  </nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <div class="toolbar-content">
+        <a routerLink="user-list">
+          <img src="assets/pl-logo.jpg" alt="Logo" class="logo">
+        </a>
+        <a routerLink="user-list" class="toolbar-title">Systematic Fantasy League</a>
+        <nav class="nav-items">
+          <a mat-button routerLink="user-list" class="nav-item">Overview</a>
+          <a mat-button routerLink="guide" class="nav-item">Guide</a>
+        </nav>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-  <div class="container mt-3">
+  <div class="container">
     <router-outlet></router-outlet>
   </div>
+
+  <mat-toolbar color="primary" class="bottom-bar">
+    <mat-toolbar-row>
+      <span class="bottom-text">Some custom text here</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </div>

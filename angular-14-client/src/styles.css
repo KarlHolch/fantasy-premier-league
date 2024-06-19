@@ -1,2 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.css";
+
+:root {
+    --primary-color: #141446;
+    --primary-contrast-color: #ffffff; /* White color for better contrast */
+  }
+  
+  .mat-toolbar.mat-primary {
+    background: var(--primary-color) !important;
+    color: var(--primary-contrast-color) !important;
+  }
+  
+  .toolbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  
+  .toolbar-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-contrast-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .container {
+    margin-top: 16px;
+    padding: 16px;
+  }
+  
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .bottom-text {
+    margin: auto;
+    font-size: 16px;
+    color: var(--primary-contrast-color);
+  }
+  
+  nav a.mat-button.nav-item {
+    color: var(--primary-contrast-color) !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 16px;
+  }
+  
+  .mat-toolbar-row {
+    width: 100%;
+  }

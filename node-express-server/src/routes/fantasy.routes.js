@@ -5,7 +5,9 @@ module.exports = app => {
 
     router.get("/users", fantasy.getUsers);
 
-    router.get("/current-gameweek", fantasy.getCurrentGameweek);
+    router.get("/gameweek/current", fantasy.getCurrentGameweek);
+
+    router.get("/gameweek/:id", fantasy.getGameweek);
 
     app.use("/api/fantasy", router);
   };

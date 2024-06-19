@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #141446;
+    --primary-contrast-color: #ffffff; /* White color for better contrast */
+  }
+  
+  .guide-card, .section-card {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-title {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  .mat-card-content h3, .mat-card-content h4, .mat-card-content h5 {
+    color: var(--primary-color);
+  }
+  
+  ol li {
+    margin-bottom: 8px;
+  }
+  
