@@ -1,0 +1,16 @@
+<div class="container" *ngIf="user !== null">
+    <mat-card class="guide-card">
+        <mat-card-header>
+            <mat-card-title>Current stats</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+                <li>Rank: {{user.rank}}</li>
+                <li>Player Name: {{user.playerName}}</li>
+                <li>Team Name: {{user.entryName}}</li>
+                <li>Points in current gameweek: {{ getGameweekStat(user, gameweek!)}}</li>
+                <li>Total Points: {{user.totalPoints}}</li>
+            </ul>
+          </mat-card-content>
+    </mat-card>
+</div>

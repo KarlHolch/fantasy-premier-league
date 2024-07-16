@@ -5,6 +5,8 @@ import { UserService } from 'src/app/services/users.service';
 import { User } from 'src/app/models/user.model';
 import { Gameweek } from 'src/app/models/gameweek.model';
 import { GameweekService } from 'src/app/services/gameweek.service';
+import { Router } from '@angular/router';
+import { UserUtility } from 'src/app/utility/user-utility';
 
 @Component({
   selector: 'app-user-list',
@@ -19,7 +21,8 @@ export class UserListComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort | null = null;
 
   constructor(private userService: UserService, 
-    private gameweekService: GameweekService
+    private gameweekService: GameweekService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +36,11 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  getGameweekStat(user: User, gameweek: number) {
-    return user.gameweek_stats.find(stat => stat.id === gameweek)?.entry_history.points ?? 0;
+  onRowClick(row: User) {
+    this.router.navigate(['/user-overview', row.apiId]);
+  }
+
+  getGameweekStat(user: User, gameweekNumber: number): number {
+    return UserUtility.getPointsByGameweek(user, gameweekNumber);
   }
 }

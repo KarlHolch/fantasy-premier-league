@@ -5,6 +5,10 @@ module.exports = app => {
 
     router.get("/users", fantasy.getUsers);
 
+    router.get("/users/:id", fantasy.getUser);
+
+    router.post("/players", fantasy.getPlayers);
+
     router.get("/gameweek/current", fantasy.getCurrentGameweek);
 
     router.get("/gameweek/:id", fantasy.getGameweek);

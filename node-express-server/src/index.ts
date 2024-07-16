@@ -17,8 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./models");
+db.mongoose.set('strictQuery', false);
 db.mongoose
-  .connect(db.url, {
+  .connect("mongodb://127.0.0.1:27017/fantasyTest", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

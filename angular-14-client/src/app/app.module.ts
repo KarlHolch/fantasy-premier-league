@@ -14,12 +14,14 @@ import { MatCardModule } from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GuideComponent } from './components/guide/guide.component';
+import { UserOverviewComponent } from './components/user-overview/user-overview.component';
 
 @NgModule({ declarations: [
         AppComponent,
         OrderByPipe,
         UserListComponent,
         GuideComponent,
+        UserOverviewComponent,
     ],
     bootstrap: [AppComponent], 
     imports: [BrowserModule,

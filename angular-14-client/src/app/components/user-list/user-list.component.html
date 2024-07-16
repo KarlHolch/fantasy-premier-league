@@ -42,6 +42,6 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row-custom"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row-custom"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row-custom" (click)="onRowClick(row)"></mat-row>
   </mat-table>
 </mat-card>
