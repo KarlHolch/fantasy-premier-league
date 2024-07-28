@@ -27,6 +27,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/tailwind.css",
               "src/custom-theme.css"
             ],
             "scripts": [],

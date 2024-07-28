@@ -6,10 +6,10 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.leagues = require("./league.model.js")(mongoose);
+db.league = require("./league.model.js")(mongoose);
 db.teams = require("./team.model.js")(mongoose);
-db.players = require("./player.model.js")(mongoose);
+//db.players = require("./player.model.js")(mongoose);
 db.gameweeks = require("./gameweek.model.js")(mongoose);
-db.users = require("./user.model.js");
+//db.users = require("./user.model.js");
 
 module.exports = db;

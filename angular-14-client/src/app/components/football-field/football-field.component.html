@@ -11,7 +11,7 @@
 
     <app-football-field-player 
             *ngFor="let player of defenders; let i = index"
-            [style]="getRowStyle(defenders.length, 30, i)"
+            [style]="getRowStyle(defenders.length, 35, i)"
             [player]="player" 
             [isCaptain]="player.apiId === captain"
             [isViceCaptain]="player.apiId === viceCaptain">
@@ -19,7 +19,7 @@
 
     <app-football-field-player 
             *ngFor="let player of midfielders; let i = index"
-            [style]="getRowStyle(midfielders.length, 55, i)"
+            [style]="getRowStyle(midfielders.length, 60, i)"
             [player]="player" 
             [isCaptain]="player.apiId === captain"
             [isViceCaptain]="player.apiId === viceCaptain">
@@ -27,7 +27,7 @@
 
     <app-football-field-player 
             *ngFor="let player of attackers; let i = index"
-            [style]="getRowStyle(attackers.length, 75, i)"
+            [style]="getRowStyle(attackers.length, 85, i)"
             [player]="player" 
             [isCaptain]="player.apiId === captain"
             [isViceCaptain]="player.apiId === viceCaptain">

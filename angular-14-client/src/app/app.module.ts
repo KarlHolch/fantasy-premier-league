@@ -25,7 +25,8 @@ import { FootballFieldPlayerComponent } from "./components/football-field-player
         UserListComponent,
         GuideComponent,
         UserOverviewComponent,
-        FootballFieldComponent
+        FootballFieldComponent,
+        FootballFieldPlayerComponent
     ],
     bootstrap: [AppComponent], 
     imports: [BrowserModule,
@@ -38,5 +39,5 @@ import { FootballFieldPlayerComponent } from "./components/football-field-player
     MatSortModule,
     MatCardModule,
     MatIconModule,
-    MatCardModule, FootballFieldPlayerComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    MatCardModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

@@ -1,8 +1,19 @@
 /* player-display.component.css */
-.player {
+.player-box {
     position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Nice shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth transform */
+    width: 200px; /* Adjust as needed to ensure enough space for names */
+  }
+  
+  .player-box:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly larger on hover */
   }
   
   .player-image {
@@ -14,8 +25,12 @@
   
   .player-name {
     margin-top: 5px;
-    color: #ffffff;
+    color: #000000; /* Black color for better readability */
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Light shadow */
+    word-wrap: break-word; /* Ensure long words break and wrap */
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden; /* Hide any overflow */
+    text-align: center; /* Center align text */
   }
   

@@ -1,4 +1,10 @@
 <mat-card class="mat-card-custom">
+  <mat-card-header>
+    <mat-card-title>
+      <h3>{{ league?.league?.name }}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
   <mat-table [dataSource]="dataSource" matSort class="mat-table-custom">
     <!-- Rank Column -->
     <ng-container matColumnDef="rank">
@@ -43,4 +49,5 @@
     <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row-custom"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row-custom" (click)="onRowClick(row)"></mat-row>
   </mat-table>
+  </mat-card-content>
 </mat-card>

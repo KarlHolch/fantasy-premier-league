@@ -7,6 +7,8 @@ import { Gameweek } from 'src/app/models/gameweek.model';
 import { GameweekService } from 'src/app/services/gameweek.service';
 import { Router } from '@angular/router';
 import { UserUtility } from 'src/app/utility/user-utility';
+import { FantasyService } from 'src/app/services/fantasy.service';
+import { League, LeagueData } from 'src/app/models/league.model';
 
 @Component({
   selector: 'app-user-list',
@@ -18,10 +20,12 @@ export class UserListComponent implements OnInit {
   dataSource = new MatTableDataSource<User>([]);
   currentGameweek: Gameweek | undefined;
   currentGameweekNumber: number | undefined;
+  league: LeagueData | undefined;
   @ViewChild(MatSort, { static: true }) sort: MatSort | null = null;
 
   constructor(private userService: UserService, 
     private gameweekService: GameweekService,
+    private fantasyService: FantasyService,
     private router: Router
   ) {}
 
@@ -29,6 +33,10 @@ export class UserListComponent implements OnInit {
     this.gameweekService.getCurrentGameweek().subscribe(data => {
       this.currentGameweek = data;
       this.currentGameweekNumber = data.apiId;
+    });
+    this.fantasyService.getLeague().subscribe(league => {
+      this.league = league;
+      console.log(league + " here");
     });
     this.userService.getUsers().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);

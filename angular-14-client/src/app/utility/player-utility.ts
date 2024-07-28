@@ -26,5 +26,13 @@ export class PlayerUtility {
         } else {
           return displayName;
         }
-      }
+    }
+
+    static getPlayerPoints(player: Player, captain: boolean): number {
+        if (captain) {
+            return player.total_points * 2;
+        } else {
+            return player.total_points;
+        }
+    }
 }
