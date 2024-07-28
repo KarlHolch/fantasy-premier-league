@@ -1,0 +1,56 @@
+<!-- football-field.component.html -->
+<div class="football-field-container">
+    <img src="assets/football-field.jpg" class="football-field-background" alt="Football Field">
+  
+    <app-football-field-player 
+            [style]="{top: '10%', left: '50%'}"
+            [player]="goalkeeper!" 
+            [isCaptain]="goalkeeper!.apiId === captain"
+            [isViceCaptain]="goalkeeper!.apiId === viceCaptain">
+    </app-football-field-player>
+
+    <app-football-field-player 
+            *ngFor="let player of defenders; let i = index"
+            [style]="getRowStyle(defenders.length, 30, i)"
+            [player]="player" 
+            [isCaptain]="player.apiId === captain"
+            [isViceCaptain]="player.apiId === viceCaptain">
+    </app-football-field-player>
+
+    <app-football-field-player 
+            *ngFor="let player of midfielders; let i = index"
+            [style]="getRowStyle(midfielders.length, 55, i)"
+            [player]="player" 
+            [isCaptain]="player.apiId === captain"
+            [isViceCaptain]="player.apiId === viceCaptain">
+    </app-football-field-player>
+
+    <app-football-field-player 
+            *ngFor="let player of attackers; let i = index"
+            [style]="getRowStyle(attackers.length, 75, i)"
+            [player]="player" 
+            [isCaptain]="player.apiId === captain"
+            [isViceCaptain]="player.apiId === viceCaptain">
+    </app-football-field-player>
+<!--
+    <div class="player" *ngFor="let player of goalkeepers" [ngStyle]="{top: '10%', left: '50%'}">
+      <img [src]="getImageUrl(player)" alt="{{player.first_name}}" class="player-image">
+      <div class="player-name">{{getPlayerDisplayName(player)}}</div>
+    </div>
+
+    <div class="player" *ngFor="let player of defenders; let i = index" [ngStyle]="getRowStyle(defenders.length, 30, i)">
+        <img [src]="getImageUrl(player)" alt="{{player.first_name}}" class="player-image">
+        <div class="player-name">{{getPlayerDisplayName(player)}}</div>
+    </div>
+
+    <div class="player" *ngFor="let player of midfielders; let i = index" [ngStyle]="getRowStyle(midfielders.length, 55, i)">
+        <img [src]="getImageUrl(player)" alt="{{player.first_name}}" class="player-image">
+        <div class="player-name">{{getPlayerDisplayName(player)}}</div>
+    </div>
+
+    <div class="player" *ngFor="let player of attackers; let i = index" [ngStyle]="getRowStyle(attackers.length, 75, i)">
+        <img [src]="getImageUrl(player)" alt="{{player.first_name}}" class="player-image">
+        <div class="player-name">{{getPlayerDisplayName(player)}}</div>
+    </div>-->
+  </div>
+  

@@ -15,6 +15,9 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GuideComponent } from './components/guide/guide.component';
 import { UserOverviewComponent } from './components/user-overview/user-overview.component';
+import { CommonModule } from '@angular/common';
+import { FootballFieldComponent } from './components/football-field/football-field.component';
+import { FootballFieldPlayerComponent } from "./components/football-field-player/football-field-player.component";
 
 @NgModule({ declarations: [
         AppComponent,
@@ -22,16 +25,18 @@ import { UserOverviewComponent } from './components/user-overview/user-overview.
         UserListComponent,
         GuideComponent,
         UserOverviewComponent,
+        FootballFieldComponent
     ],
     bootstrap: [AppComponent], 
     imports: [BrowserModule,
-        AppRoutingModule,
-        MatToolbarModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatTableModule,
-        MatSortModule,
-        MatCardModule,
-        MatIconModule,
-        MatCardModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    AppRoutingModule,
+    MatToolbarModule,
+    CommonModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatCardModule,
+    MatIconModule,
+    MatCardModule, FootballFieldPlayerComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

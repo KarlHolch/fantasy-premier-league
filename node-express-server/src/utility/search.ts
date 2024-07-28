@@ -17,7 +17,6 @@ export async function searchByCustomField(collectionName: string, fieldName: str
     console.log("Query:", query);
             
     const results = await collection.find(query).toArray();
-    console.log("Results:", results);
 
     return results;
 }

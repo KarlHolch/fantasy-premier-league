@@ -21,8 +21,6 @@ const insertOrUpdateUsers = async (data, gw) => {
       const transfers = transferDetails.filter(transfer => transfer.event === gw);
       gameweekStats.transfers = transfers;
 
-      console.log(`Transfers for entry ${user.entry}, GW ${gw}:`, transfers);
-
       const existingUser = await Users.findOne({ apiId: user.id });
       if (!existingUser) {
         bulkOps.push({

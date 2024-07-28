@@ -1,16 +1,85 @@
+<h1>
+  Team: {{ user?.entryName}}
+</h1>
+<app-football-field 
+  [goalkeeper]="goalkeeper" 
+  [defenders]="defenders" 
+  [midfielders]="midfielders" 
+  [attackers]="attackers" 
+  [bench]="bench"
+  [captain]="captain"
+  [viceCaptain]="viceCaptain"></app-football-field>
+
 <div class="container" *ngIf="user !== null">
     <mat-card class="guide-card">
         <mat-card-header>
-            <mat-card-title>Current stats</mat-card-title>
+            <mat-card-title><h3>Current stats</h3></mat-card-title>
           </mat-card-header>
           <mat-card-content>
             <ul>
                 <li>Rank: {{user.rank}}</li>
                 <li>Player Name: {{user.playerName}}</li>
-                <li>Team Name: {{user.entryName}}</li>
                 <li>Points in current gameweek: {{ getGameweekStat(user, gameweek!)}}</li>
                 <li>Total Points: {{user.totalPoints}}</li>
             </ul>
           </mat-card-content>
     </mat-card>
+    <mat-card class="guide-card">
+        <mat-card-header>
+            <mat-card-title><h3>Latest transfers (Current gameweek)</h3></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div>
+              <h5>Transfers In</h5>
+              <ul>
+                <li *ngFor="let player of transferredIn">{{ getPlayerDisplayName(player) }}</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Transfers Out</h5>
+              <ul>
+                <li *ngFor="let player of transferredOut">{{ getPlayerDisplayName(player) }}</li>
+              </ul>
+            </div>
+          </mat-card-content>
+    </mat-card>
+    <mat-card class="guide-card">
+      <mat-card-header>
+          <mat-card-title><h3>Picks:</h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <h5>Goalkeepers</h5>
+            <ul>
+              <li *ngIf="goalkeeper">{{ getPlayerDisplayName(goalkeeper) }}</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Defenders</h5>
+            <ul>
+              <li *ngFor="let player of defenders">{{ getPlayerDisplayName(player) }}</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Midfielders</h5>
+            <ul>
+              <li *ngFor="let player of midfielders">{{ getPlayerDisplayName(player) }}</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Attackers</h5>
+            <ul>
+              <li *ngFor="let player of attackers">{{ getPlayerDisplayName(player) }}</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Bench</h5>
+            <ul>
+              <li *ngFor="let player of bench">{{ getPlayerDisplayName(player) }}</li>
+            </ul>
+          </div>
+        </mat-card-content>
+  </mat-card>
+
+
 </div>

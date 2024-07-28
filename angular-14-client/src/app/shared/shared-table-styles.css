@@ -1,75 +1,75 @@
 /* shared-table-styles.css */
 .arrow-up {
-    color: green;
-  }
-  
-  .arrow-down {
-    color: red;
-  }
-  
-  .horizontal-rule {
-    color: black;
-  }
-  
-  .mat-card-custom {
-    margin: 20px;
-    padding: 20px;
-    background-color: #f0f0f0; /* Lighter background for modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-radius: 8px; /* Rounded corners */
-  }
-  
-  .mat-header-cell-custom {
-    background-color: #37003c; /* Premier League purple */
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px; /* Larger font for headers */
-    padding: 12px; /* Padding for better spacing */
-    border-right: 1px solid #e0e0e0; /* Divider between columns */
-  }
-  
-  .mat-cell-custom {
-    color: #37003c;
-    text-align: center;
-    padding: 12px; /* Padding for better spacing */
-    font-size: 14px; /* Consistent font size */
-    border-right: 1px solid #e0e0e0; /* Divider between columns */
-  }
-  
-  .mat-header-row, .mat-row {
-    display: flex;
-  }
-  
-  .mat-header-cell-custom, .mat-cell-custom {
-    flex: 1;
-  }
-  
-  .mat-header-cell-custom:last-child, .mat-cell-custom:last-child {
-    border-right: none; /* Remove divider for the last column */
-  }
-  
-  .mat-row-custom:nth-child(even) {
-    background-color: #f7f7f7; /* Alternating row colors for readability */
-  }
-  
-  .mat-row-custom:nth-child(odd) {
-    background-color: #ffffff; /* Alternating row colors for readability */
-  }
-  
-  /* Add hover effect for rows */
-  .mat-row-custom:hover {
-    background-color: #e0f7fa; /* Light blue for hover effect */
-  }
-  
-  /* Style for icons in rank change column */
-  mat-icon {
-    vertical-align: middle;
-  }
-  
-  /* Style for the entire table */
-  .mat-table-custom {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
+  color: green;
+}
+
+.arrow-down {
+  color: red;
+}
+
+.horizontal-rule {
+  color: black;
+}
+
+.mat-card-custom {
+  margin: 10px; /* Reduced margin */
+  padding: 10px; /* Reduced padding */
+  background-color: #f0f0f0; /* Lighter background for modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.mat-header-cell-custom {
+  background-color: #37003c; /* Premier League purple */
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px; /* Smaller font for headers */
+  padding: 8px; /* Reduced padding for better spacing */
+  border-right: 1px solid #e0e0e0; /* Divider between columns */
+}
+
+.mat-cell-custom {
+  color: #37003c;
+  text-align: center;
+  padding: 8px; /* Reduced padding for better spacing */
+  font-size: 12px; /* Smaller font size */
+  border-right: 1px solid #e0e0e0; /* Divider between columns */
+}
+
+.mat-header-row, .mat-row {
+  display: flex;
+}
+
+.mat-header-cell-custom, .mat-cell-custom {
+  flex: 1;
+}
+
+.mat-header-cell-custom:last-child, .mat-cell-custom:last-child {
+  border-right: none; /* Remove divider for the last column */
+}
+
+.mat-row-custom:nth-child(even) {
+  background-color: #f7f7f7; /* Alternating row colors for readability */
+}
+
+.mat-row-custom:nth-child(odd) {
+  background-color: #ffffff; /* Alternating row colors for readability */
+}
+
+/* Add hover effect for rows */
+.mat-row-custom:hover {
+  background-color: #e0f7fa; /* Light blue for hover effect */
+}
+
+/* Style for icons in rank change column */
+mat-icon {
+  vertical-align: middle;
+}
+
+/* Style for the entire table */
+.mat-table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px; /* Reduced font size for entire table */
+}
